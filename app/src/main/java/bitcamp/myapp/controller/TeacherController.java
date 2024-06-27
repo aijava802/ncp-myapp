@@ -27,9 +27,11 @@ public class TeacherController {
     log.trace("TeacherController 생성됨!");
   }
 
-  @Autowired private TeacherService teacherService;
-  @Autowired private ObjectStorageService objectStorageService;
-  private String bucketName = "bitcamp-bucket-53-member-photo";
+  @Autowired
+  private TeacherService teacherService;
+  @Autowired
+  private ObjectStorageService objectStorageService;
+  private String bucketName = "bitcamp-bucket-0624-member-photo";
 
   @PostMapping
   public Object insert(Teacher teacher, MultipartFile file) {

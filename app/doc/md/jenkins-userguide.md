@@ -167,6 +167,7 @@ root 사용자로 젠킨스 컨테이너에 접속하기
       - 'Add JDK' 클릭
         - Name: `openjdk-17`
         - JAVA_HOME: `/usr/lib/jvm/java-17-openjdk-amd64`
+          `/opt/java/openjdk`
     - SAVE 클릭
 
 ### github.com의 프로젝트 연동
@@ -206,6 +207,7 @@ Dashboard
 - `지금 빌드` 클릭
   - Console Output 확인
   - `docker exec -itu 0 my-jenkins bash` 접속
+  - `cd /var/jenkins_home/workspace`
 
 ### github webhook 연동
 

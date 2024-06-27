@@ -27,23 +27,25 @@ import jakarta.servlet.http.HttpSession;
 @RequestMapping("/boards")
 public class BoardController {
 
-  // 입력: POST   => /boards
-  // 목록: GET    => /boards
-  // 조회: GET    => /boards/{no}
-  // 변경: PUT    => /boards/{no}
+  // 입력: POST => /boards
+  // 목록: GET => /boards
+  // 조회: GET => /boards/{no}
+  // 변경: PUT => /boards/{no}
   // 삭제: DELETE => /boards/{no}
 
   Logger log = LogManager.getLogger(getClass());
 
-  @Autowired private BoardService boardService;
-  @Autowired private ObjectStorageService objectStorageService;
-  private String bucketName = "bitcamp-bucket-53";
+  @Autowired
+  private BoardService boardService;
+  @Autowired
+  private ObjectStorageService objectStorageService;
+  private String bucketName = "bitcamp-bucket-0624";
 
   @PostMapping
   public Object insert(
       Board board,
       List<MultipartFile> files,
-      HttpSession session) throws Exception{
+      HttpSession session) throws Exception {
 
     Member loginUser = (Member) session.getAttribute("loginUser");
 
@@ -181,11 +183,3 @@ public class BoardController {
   }
 
 }
-
-
-
-
-
-
-
-
